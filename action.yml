@@ -24,11 +24,9 @@ inputs:
   newPackageName:
     description: "The new package name"
     required: true
-    default: "com.neat.mobileappprod"
   oldPackageName:
     description: "The old package name"
     required: true
-    default: "com.neatmobileapp"
 outputs:
   result: # id of output
     description: "Action Result"
