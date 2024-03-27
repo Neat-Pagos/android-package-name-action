@@ -1,4 +1,4 @@
-name: "Increment the version code of your project"
+name: "Increment the version code of your project v1.0.0"
 description: "This action replace App Package Name on all neccesary files"
 inputs:
   androidManifestPath:
