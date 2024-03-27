@@ -1,0 +1,40 @@
+name: "Increment the version code of your project"
+description: "This action replace App Package Name on all neccesary files"
+inputs:
+  androidManifestPath:
+    description: "Android Manifest path to override version"
+    required: true
+    default: "android/app/src/main/AndroidManifest.xml"
+  buildGradlePath:
+    description: "Build gradle path to override version"
+    required: true
+    default: "android/app/build.gradle"
+  stringsPath:
+    description: "Strings xml path to override version"
+    required: true
+    default: "android/app/src/main/res/values/strings.xml"
+  mainActivityPath:
+    description: "Main Activity path to override version"
+    required: true
+    default: "android/app/src/main/java/com/neatmobileapp/MainActivity.java"
+  mainApplicationPath:
+    description: "Main Application path to override version"
+    required: true
+    default: "android/app/src/main/java/com/neatmobileapp/MainApplication.java"
+  newPackageName:
+    description: "The new package name"
+    required: true
+    default: "com.neat.mobileappprod"
+  oldPackageName:
+    description: "The old package name"
+    required: true
+    default: "com.neatmobileapp"
+outputs:
+  result: # id of output
+    description: "Action Result"
+runs:
+  using: "node20"
+  main: "dist/index.js"
+branding:
+  color: 'blue'
+  icon: 'anchor'
