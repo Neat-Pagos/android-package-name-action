@@ -41,6 +41,6 @@ jobs:
           stringsPath: android/app/src/main/res/values/strings.xml
           mainActivityPath: android/app/src/main/java/com/neatmobileapp/MainActivity.java
           mainApplicationPath: android/app/src/main/java/com/neatmobileapp/MainApplication.java
-          newPackageName: com.neat.mobileappprod
-          oldPackageName: com.neatmobileapp
+          newPackageName: com.testApp.prod
+          oldPackageName: com.testApp
 ```
