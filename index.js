@@ -42,28 +42,15 @@ try {
                 } else if(path === mainApplicationPath){
                     mainApplicationOK = true
                 }
+
+                if (manifestOK && gradleOK && stringsOK && mainActivityOK && mainApplicationOK) {
+                    console.log('All files have been processed');
+                    core.setOutput("result", `Done`);
+                }
                 
             });
         });
     });
-
-    const maxRetries = 50;
-    const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-    let retries = 0;
-    while (retries < maxRetries && !manifestOK && !gradleOK && !stringsOK && !mainActivityOK && !mainApplicationOK) {
-        if (manifestOK && gradleOK && stringsOK && mainActivityOK && mainApplicationOK) {
-            break;
-        }
-        await sleep(1000);
-        retries++;
-    }
-
-    if (manifestOK && gradleOK && stringsOK && mainActivityOK && mainApplicationOK) {
-        console.log('All files have been processed');
-        core.setOutput("result", `Done`);
-    } else {
-        core.setFailed('Files not updated');
-    }
 
 } catch (error) {
     core.setFailed(error.message);
