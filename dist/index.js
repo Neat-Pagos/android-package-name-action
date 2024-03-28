@@ -26612,7 +26612,7 @@ try {
     console.log(`mainApplicationPath: ${mainApplicationPath}`);
     console.log(`reactNativeFlipperPath: ${reactNativeFlipperPath}`);
     const searchRegExp = new RegExp(oldPackageName, 'g');
-    const paths = [androidManifestPath, buildGradlePath, stringsPath, mainActivityPath, mainApplicationPath];
+    const paths = [androidManifestPath, buildGradlePath, stringsPath, mainActivityPath, mainApplicationPath, reactNativeFlipperPath];
     let manifestOK = false;
     let gradleOK = false;
     let stringsOK = false;
