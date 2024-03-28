@@ -31,6 +31,7 @@ try {
             fs.writeFile(path, newData, function (err) {
                 if (err) throw err;
                 console.log(`Successfully override package name ${newPackageName} on ${path}`);
+                
                 if(path === androidManifestPath){
                     manifestOK = true
                 } else if(path === buildGradlePath){
