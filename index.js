@@ -1,5 +1,4 @@
 const core = require('@actions/core');
-const github = require('@actions/github');
 const fs = require('fs');
 
 try {
@@ -58,7 +57,7 @@ try {
         await sleep(1000);
         retries++;
     }
-    
+
     if (manifestOK && gradleOK && stringsOK && mainActivityOK && mainApplicationOK) {
         console.log('All files have been processed');
         core.setOutput("result", `Done`);
