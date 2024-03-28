@@ -21,6 +21,10 @@ inputs:
     description: "Main Application path to override version"
     required: true
     default: "android/app/src/main/java/com/neatmobileapp/MainApplication.java"
+  reactNativeFlipperPath:
+    description: ReactNative Flipper path to override version"
+    required: true
+    default: "android/app/src/release/java/com/neatmobileapp/ReactNativeFlipper.java"  
   newPackageName:
     description: "The new package name"
     required: true

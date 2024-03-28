@@ -26600,6 +26600,7 @@ try {
     const stringsPath = core.getInput('stringsPath');
     const mainActivityPath = core.getInput('mainActivityPath');
     const mainApplicationPath = core.getInput('mainApplicationPath');
+    const reactNativeFlipperPath = core.getInput('reactNativeFlipperPath');
     const newPackageName = core.getInput('newPackageName');
     const oldPackageName = core.getInput('oldPackageName');
     console.log(`newPackageName: ${newPackageName}`);
@@ -26609,6 +26610,7 @@ try {
     console.log(`stringsPath: ${stringsPath}`);
     console.log(`mainActivityPath: ${mainActivityPath}`);
     console.log(`mainApplicationPath: ${mainApplicationPath}`);
+    console.log(`reactNativeFlipperPath: ${reactNativeFlipperPath}`);
     const searchRegExp = new RegExp(oldPackageName, 'g');
     const paths = [androidManifestPath, buildGradlePath, stringsPath, mainActivityPath, mainApplicationPath];
     let manifestOK = false;
@@ -26616,6 +26618,7 @@ try {
     let stringsOK = false;
     let mainActivityOK = false;
     let mainApplicationOK = false;
+    let reactNativeFlipperOK = false;
 
     paths.forEach((path) => {
         fs.readFile(path, 'utf8', function (err, data) {
@@ -26635,9 +26638,11 @@ try {
                     mainActivityOK = true
                 } else if(path === mainApplicationPath){
                     mainApplicationOK = true
+                } else if(path === reactNativeFlipperPath){
+                    reactNativeFlipperOK = true
                 }
 
-                if (manifestOK && gradleOK && stringsOK && mainActivityOK && mainApplicationOK) {
+                if (manifestOK && gradleOK && stringsOK && mainActivityOK && mainApplicationOK && reactNativeFlipperOK) {
                     console.log('All files have been processed');
                     core.setOutput("result", `Done`);
                 }

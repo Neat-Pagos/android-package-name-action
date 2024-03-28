@@ -41,6 +41,7 @@ jobs:
           stringsPath: android/app/src/main/res/values/strings.xml
           mainActivityPath: android/app/src/main/java/com/neatmobileapp/MainActivity.java
           mainApplicationPath: android/app/src/main/java/com/neatmobileapp/MainApplication.java
+          reactNativeFlipperPath: android/app/src/release/java/com/neatmobileapp/ReactNativeFlipper.java
           newPackageName: com.testApp.prod
           oldPackageName: com.testApp
 ```
